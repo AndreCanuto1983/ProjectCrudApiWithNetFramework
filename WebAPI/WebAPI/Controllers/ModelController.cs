@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpGet]
-        [Route("GetModel")]
+        [Route("")]
         public async Task<IHttpActionResult> GetModel([FromUri]int id)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);

@@ -14,8 +14,6 @@ namespace WebAPI.Controllers
     [RoutePrefix("api/Brand")]
     public class BrandController : ApiController
     {
-        #region Controller for GET Brand
-
         /// <summary>
         /// GET api/Brand/GetBrand
         /// Não entendi o contexto do nome "Brand" mais vou seguir o padrão de vocês
@@ -25,7 +23,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpGet]
-        [Route("GetBrand")]
+        [Route("")]
         public async Task<IHttpActionResult> GetBrand([FromUri]int id)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -45,7 +43,5 @@ namespace WebAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-
-        #endregion    
     }
 }

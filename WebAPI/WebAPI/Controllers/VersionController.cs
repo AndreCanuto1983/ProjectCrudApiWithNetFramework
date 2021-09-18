@@ -14,8 +14,6 @@ namespace WebAPI.Controllers
     [RoutePrefix("api/Version")]
     public class VersionController : ApiController
     {
-        #region Controller for GET Version
-
         /// <summary>
         /// GET api/Version/GetVersion
         /// Se quiser validar o usuário para get, comente o "[AllowAnonymous]" abaixo
@@ -24,7 +22,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpGet]
-        [Route("GetVersion")]
+        [Route("")]
         public async Task<IHttpActionResult> GetVersion([FromUri]int id)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -44,7 +42,5 @@ namespace WebAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-
-        #endregion    
     }
 }

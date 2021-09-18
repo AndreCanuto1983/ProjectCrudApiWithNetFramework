@@ -15,8 +15,6 @@ namespace WebAPI.Controllers
     [RoutePrefix("api/Vehicle")]
     public class VehiclesController : ApiController
     {
-        #region Controller for Insert Vehicles
-
         /// <summary>
         /// POST api/Vehicle/InsertVehicle
         /// Este controller faz insert do veículo
@@ -26,7 +24,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpPost]        
-        [Route("InsertVehicle")]
+        [Route("")]
         public async Task<IHttpActionResult> InsertVehicle([FromBody]VehicleFrontModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -54,10 +52,6 @@ namespace WebAPI.Controllers
             }
         }
 
-        #endregion
-
-        #region Controller for Update Vehicles
-
         /// <summary>
         /// POST api/Vehicle/UpdateVehicle
         /// Este controller faz update do veículo       
@@ -67,7 +61,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpPut]
-        [Route("UpdateVehicle")]
+        [Route("")]
         public async Task<IHttpActionResult> UpdateVehicle([FromBody]VehicleFrontModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -95,10 +89,6 @@ namespace WebAPI.Controllers
             }
         }
 
-        #endregion
-
-        #region Controller for Delete Vehicles
-
         /// <summary>
         /// POST api/Vehicle/DeleteVehicle     
         /// Se quiser que não valide o usuário/token, descomente o "[AllowAnonymous]" abaixo
@@ -107,7 +97,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpDelete]
-        [Route("DeleteVehicle")]
+        [Route("")]
         public async Task<IHttpActionResult> DeleteVehicle([FromUri]int id)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -140,10 +130,6 @@ namespace WebAPI.Controllers
             }
         }
 
-        #endregion
-
-        #region Controller for GET Vehicles
-
         /// <summary>
         /// GET api/Vehicle/GetVehicle
         /// Se quiser que não valide o usuário/token, descomente o "[AllowAnonymous]" abaixo
@@ -152,7 +138,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
         //[AllowAnonymous]
         [HttpGet]
-        [Route("GetVehicle")]
+        [Route("")]
         public async Task<IHttpActionResult> GetVehicle([FromUri]int id)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -172,7 +158,5 @@ namespace WebAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-
-        #endregion
     }
 }
